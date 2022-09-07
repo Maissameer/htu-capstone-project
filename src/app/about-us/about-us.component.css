@@ -1,0 +1,39 @@
+.mat-tab-group{
+    text-align: center;
+    justify-content: center;
+    margin: 50px ;
+    font-size: 1rem;
+    line-height: 1.4rem;
+}
+p{
+    margin: 50px;
+}
+ .about-us {
+    display: flex;
+    align-items: center;
+    column-gap: 55px;
+} 
+.about-us-txt,.about-us-deco{
+    width: 50%;
+}
+
+.qaf-form{
+    margin:20px;
+    border: 2px solid gray;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.334);
+    border-radius: 30px;
+    padding: 23px 5px;
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.example-full-width{
+    width: 75%;
+    align-self: center;
+}
+.submit-btn{
+    width: 50%;
+    align-self: center;
+
+}

@@ -1,0 +1,101 @@
+<div class="total-body">
+
+
+  <div class="admin-startup">
+  
+    <h2>Plaese full the Required feilds to Submit the new StartUp
+       </h2>
+  <form #form="ngForm" class="startup-form" [formGroup]="options"  
+  (ngSubmit)="done()">
+    <!-- startup name -->
+    <div>
+      <label >StartUp Name </label>
+      <br>
+      <mat-form-field  class="example-full-width" appearance="outline"
+    [hideRequiredMarker]="hideRequiredControl.value"
+    [floatLabel]="getFloatLabelValue()">
+  <input matInput placeholder="Enter the Name" type="text"
+  formControlName="userName"
+  >
+  <mat-error *ngIf="userName?.errors?.['required']"
+            >Name is Required</mat-error
+          >
+  </mat-form-field>
+    </div>
+    <!-- satrtup logo -->
+    <div>
+    <label>Logo </label>
+    <br>
+    <mat-form-field  class="example-full-width" appearance="outline"
+    [hideRequiredMarker]="hideRequiredControl.value"
+    [floatLabel]="getFloatLabelValue()">
+  <input type="url"
+  formControlName="logo"
+   matInput placeholder="Enter the logo URL" >
+   <mat-error *ngIf="logo?.errors?.['required']"
+            >logo is Required</mat-error
+          >
+  </mat-form-field>
+  </div>
+ 
+   <!--City -->
+ <label>Select the City</label>
+    <br>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Select the City</mat-label>
+    <mat-select formControlName="City"
+    >
+    <mat-option  *ngFor="let thecity of cities"> 
+      {{thecity.city}}
+    </mat-option >
+    </mat-select>
+  
+  </mat-form-field>
+
+  <!-- parent Sector -->
+  <label>Select the Sector</label>
+    <br>
+  <mat-form-field class="example-full-width" appearance="outline">
+    <mat-label>Select the Sector</mat-label>
+    <mat-select formControlName="city" multiple="sectorsOptions"
+    >
+    <mat-option  *ngFor="let sector of sectorsOptions"> 
+      {{sector.name}}
+    </mat-option >
+    </mat-select>
+  
+  </mat-form-field>
+   <!-- Founder name -->
+   <div>
+    <label >Founder Name </label>
+    <br>
+    <mat-form-field  class="example-full-width" appearance="outline"
+  [hideRequiredMarker]="hideRequiredControl.value"
+  [floatLabel]="getFloatLabelValue()">
+<input matInput placeholder="Enter the Name" type="text"
+formControlName="founderName"
+>
+</mat-form-field>
+  </div>
+
+   <!-- No. Of Employees -->
+   <div>
+    <label >No. Of Employees </label>
+    <br>
+    <mat-form-field  class="example-full-width" appearance="outline"
+  [hideRequiredMarker]="hideRequiredControl.value"
+  [floatLabel]="getFloatLabelValue()">
+<input matInput placeholder="Enter the No." type="number"
+formControlName="employee"
+>
+</mat-form-field>
+  </div>
+
+  <!--Year of estableshment-->
+
+  
+   <!-- button submit -->
+   <button type="submit" mat-raised-button color="primary" (click)="done()"> Add </button>
+  </form>
+  </div>
+  </div>

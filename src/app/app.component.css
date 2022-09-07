@@ -1,0 +1,17 @@
+.mat-toolbar-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+      }
+    .logo{
+      border-radius: 12px;
+      margin-right: 15px;
+    }
+    .title{
+      text-decoration: none;
+      color: white;
+      font-size: larger;
+    }
+   .link{
+      text-decoration: none;
+    }

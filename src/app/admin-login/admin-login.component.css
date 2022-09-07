@@ -1,0 +1,29 @@
+.login-page{
+    text-align: center;
+  padding: 20px 0;
+  width: 50%;
+  border: 1px solid gray;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.334);
+  border-radius: 30px;
+  margin: 50px auto ;
+  
+}
+.login-form{
+    padding: 20px 0;
+   
+}
+.login-user{
+    margin-bottom: 10px;
+    display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+.login-pass{
+       margin-bottom: 10px;
+        display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    }

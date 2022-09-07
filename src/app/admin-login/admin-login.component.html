@@ -1,0 +1,67 @@
+<!-- Login page -->
+<div class="login-page">
+  <h2>Welcome Back</h2>
+  <p>Please Enter your information to login</p>
+  <!-- The login form -->
+
+  <form
+    #form="ngForm"
+    class="login-form"
+    appearance="outline"
+    [formGroup]="loginForm"
+    (ngSubmit)="onSubmit()"
+  >
+    <!-- admin user -->
+    <div class="login-user">
+      <mat-form-field appearance="outline">
+        <mat-label>Admin Email</mat-label>
+        <input
+          matInput
+          type="email"
+          formControlName="email"
+          placeholder="Enter Your Email"
+        />
+        <!-- the ? for the ability of being null  -->
+        <mat-error *ngIf="email?.errors?.['required']"
+          >Email is Required</mat-error
+        >
+        <mat-error *ngIf="email?.errors?.['email']">
+          Email is incorrect
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <!-- admin password -->
+    <div class="login-pass">
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input
+          matInput
+          type="password"
+          formControlName="password"
+          placeholder="Passworde"
+          [type]="hide ? 'password' : 'text'"
+        />
+        <mat-error *ngIf="password?.errors?.['required']"
+          >Password is Required</mat-error
+        >
+        <mat-error *ngIf="password?.errors?.['minlenght']">
+          Password at least should be 8 charactors
+        </mat-error>
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+        </button>
+        <!-- the email is uncorrect -->
+      </mat-form-field>
+    </div>
+    <mat-error *ngIf="formStatus">
+      {{formStatus}}
+    </mat-error>
+    <!-- button submit -->
+    <button type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid"> login </button>
+  </form>
+</div>

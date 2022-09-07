@@ -1,0 +1,67 @@
+<div class="total-body">
+
+
+<div class="admin-sectors">
+
+  <h2>Plaese full the Required feilds to Submit the new Sector </h2>
+<form #form="ngForm" class="sectors-form" [formGroup]="options"  
+(ngSubmit)="done()">
+  <!-- sectore name -->
+  <div>
+    <label >Sector Name </label>
+    <br>
+    <mat-form-field  class="example-full-width" appearance="outline"
+  [hideRequiredMarker]="hideRequiredControl.value"
+  [floatLabel]="getFloatLabelValue()">
+<input matInput placeholder="Enter the Name" type="text"
+formControlName="userName"
+>
+<mat-error *ngIf="userName?.errors?.['required']"
+          >Email is Required</mat-error
+        >
+</mat-form-field>
+  </div>
+  <!-- sector logo -->
+  <div>
+  <label>Logo </label>
+  <br>
+  <mat-form-field  class="example-full-width" appearance="outline"
+  [hideRequiredMarker]="hideRequiredControl.value"
+  [floatLabel]="getFloatLabelValue()">
+<input type="url"
+formControlName="logo"
+ matInput placeholder="Enter the logo URL" >
+ <mat-error *ngIf="logo?.errors?.['required']"
+          >Email is Required</mat-error
+        >
+</mat-form-field>
+</div>
+<!-- design color -->
+<div>
+  <label>Select the color</label>
+  <br>
+  <mat-form-field  class="example-full-width" appearance="outline"
+  [floatLabel]="getFloatLabelValue()">
+<input type="color" 
+formControlName="color"
+matInput placeholder="Enter the logo URL" >
+</mat-form-field>
+</div>
+<!-- parent category -->
+<label>Select the Category</label>
+  <br>
+<mat-form-field class="example-full-width" appearance="outline">
+  <mat-label>Select the category</mat-label>
+  <mat-select formControlName="category"
+  >
+  <mat-option  *ngFor="let option of sectorsOptions"> 
+    {{option.name}}
+  </mat-option >
+  </mat-select>
+
+</mat-form-field>
+ <!-- button submit -->
+ <button type="submit" mat-raised-button color="primary" (click)="done()"> Add </button>
+</form>
+</div>
+</div>
