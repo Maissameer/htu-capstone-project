@@ -25,7 +25,7 @@ p{
     padding: 23px 5px;
     display: flex;
     flex-direction: column;
-  
+    display: flex;
 }
 
 .example-full-width{

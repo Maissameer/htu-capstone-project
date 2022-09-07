@@ -56,55 +56,64 @@
 
   <!-- QAF -->
 
-  <mat-tab label="QAF">
-    <p>If you have any questions don't hesitateand ask us we are here to help you </p>
-    <form  #form="ngForm" class="qaf-form">
-      <!-- First Name & Last Name -->
-      
-                <mat-form-field class="example-full-width" appearance="fill">
-                  <mat-label>First name</mat-label>
-                  <input matInput name="firstname" ngModel required/>
-                </mat-form-field>
-             
+  <mat-tab label="QAF" class="mat-tab">
+   
+   
+      <form  #form="ngForm" class="qaf-form">
 
-            <!-- Email -->
-
+        <div class="qaf-txt">
+          <p>If you have any questions don't hesitateand ask us we are here to help you </p>
+        </div>
+        
+        <div class="form">
+        <!-- First Name & Last Name -->
+        
+                  <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>First name</mat-label>
+                    <input matInput name="firstname" ngModel required/>
+                  </mat-form-field>
+               
+  
+              <!-- Email -->
+  
+        
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Email</mat-label>
+              <input
+                type="email"
+                matInput
+                name="email"
+                ngModel
+                [formControl]="emailFormControl"
+                placeholder="Ex. pat@example.com"
+              />
+              <mat-error
+                *ngIf="
+                  emailFormControl.hasError('email') &&
+                  !emailFormControl.hasError('required')
+                "
+              >
+                Please enter a valid email address
+              </mat-error>
+              <mat-error *ngIf="emailFormControl.hasError('required')">
+                Email is <strong>required</strong>
+              </mat-error>
+            </mat-form-field>
+            <br />
       
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Email</mat-label>
-            <input
-              type="email"
-              matInput
-              name="email"
-              ngModel
-              [formControl]="emailFormControl"
-              placeholder="Ex. pat@example.com"
-            />
-            <mat-error
-              *ngIf="
-                emailFormControl.hasError('email') &&
-                !emailFormControl.hasError('required')
-              "
-            >
-              Please enter a valid email address
-            </mat-error>
-            <mat-error *ngIf="emailFormControl.hasError('required')">
-              Email is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-          <br />
+        
+        <!-- Texteara -->
+        
+          <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>The Question</mat-label>
+              <textarea name="texteara" ngModel matInput placeholder="Where can I find...?"></textarea>
+            </mat-form-field>
+       
+          <button type="submit" mat-raised-button color="primary" class="submit-btn" > Submit </button>
+        </div>
+      </form>
     
-      
-      <!-- Texteara -->
-      
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>The Question</mat-label>
-            <textarea name="texteara" ngModel matInput placeholder="Where can I find...?"></textarea>
-          </mat-form-field>
-     
-        <button type="submit" mat-raised-button color="primary" class="submit-btn" > Submit </button>
-
-    </form>
+    
   </mat-tab>
     
 </mat-tab-group>
