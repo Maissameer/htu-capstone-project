@@ -37,7 +37,6 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 
-
 const routes: Route[] = [
   { path: '', redirectTo:'/landing-page', pathMatch: 'full' },
   { path:'landing-page', component: LandingPageComponent},
@@ -87,7 +86,7 @@ const routes: Route[] = [
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
-    ShareIconsModule
+    ShareIconsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
