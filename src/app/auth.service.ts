@@ -15,4 +15,8 @@ signIn( email:string, password: string ){
   //we used from to make it obsirvable from a promise
   return from (this.fireAuth.signInWithEmailAndPassword(email,password)) ;
 }
+
+signOut(){
+  return from(this.fireAuth.signOut());
+}
 }

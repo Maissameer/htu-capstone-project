@@ -15,7 +15,7 @@
     [hideRequiredMarker]="hideRequiredControl.value"
     [floatLabel]="getFloatLabelValue()">
   <input matInput placeholder="Enter the Name" type="text"
-  formControlName="userName"
+  [formControl]="userName"
   >
   <mat-error *ngIf="userName?.errors?.['required']"
             >Name is Required</mat-error
@@ -30,7 +30,7 @@
     [hideRequiredMarker]="hideRequiredControl.value"
     [floatLabel]="getFloatLabelValue()">
   <input type="url"
-  formControlName="logo"
+  [formControl]="logo"
    matInput placeholder="Enter the logo URL" >
    <mat-error *ngIf="logo?.errors?.['required']"
             >logo is Required</mat-error
@@ -43,7 +43,7 @@
     <br>
   <mat-form-field class="example-full-width" appearance="outline">
     <mat-label>Select the City</mat-label>
-    <mat-select formControlName="City"
+    <mat-select [formControl]="City"
     >
     <mat-option  *ngFor="let thecity of cities"> 
       {{thecity.city}}
@@ -57,7 +57,7 @@
     <br>
   <mat-form-field class="example-full-width" appearance="outline">
     <mat-label>Select the Sector</mat-label>
-    <mat-select formControlName="city" multiple="sectorsOptions"
+    <mat-select [formControl]="city" multiple="sectorsOptions"
     >
     <mat-option  *ngFor="let sector of sectorsOptions"> 
       {{sector.name}}
@@ -73,7 +73,7 @@
   [hideRequiredMarker]="hideRequiredControl.value"
   [floatLabel]="getFloatLabelValue()">
 <input matInput placeholder="Enter the Name" type="text"
-formControlName="founderName"
+[formControl]="founderName"
 >
 </mat-form-field>
   </div>
@@ -86,14 +86,50 @@ formControlName="founderName"
   [hideRequiredMarker]="hideRequiredControl.value"
   [floatLabel]="getFloatLabelValue()">
 <input matInput placeholder="Enter the No." type="number"
-formControlName="employee"
+[formControl]="employee"
 >
 </mat-form-field>
   </div>
 
   <!--Year of estableshment-->
+  <mat-form-field appearance="fill">
+    <mat-label>Month and Year</mat-label>
+    <input matInput [matDatepicker]="dp" [formControl]="date">
+    <mat-hint>MM/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+    <mat-datepicker #dp
+                    startView="multi-year"
+                    (monthSelected)="setMonthAndYear($event, dp)"
+                    panelClass="example-month-picker">
+    </mat-datepicker>
+  </mat-form-field>
+  <!--website URL-->
+  <div>
+    <label>Website URL </label>
+    <br>
+    <mat-form-field  class="example-full-width" appearance="outline"
+    [hideRequiredMarker]="hideRequiredControl.value"
+    [floatLabel]="getFloatLabelValue()">
+  <input type="url"
+  [formControl]="url"
+   matInput placeholder="Enter the Website URL" >
+   <mat-error *ngIf="!emailFormControl.hasError('required')"
+            >Website is Required</mat-error
+          >
+  </mat-form-field>
+  </div>
+  <!--Email Address-->
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="emailFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
 
-  
    <!-- button submit -->
    <button type="submit" mat-raised-button color="primary" (click)="done()"> Add </button>
   </form>

@@ -1,59 +1,80 @@
 .landing-page{
-    margin: 10% 5%;
+  margin: 10% 5%;
 }
 
 h1{
-    text-align: center;
+  text-align: center;
 }
 
 .mat-chip{
- text-align: center;
+text-align: center;
 }
 a{
-    text-decoration: none;
+  text-decoration: none;
 }
 .container{
-    text-align: center;
-    padding: 2% 2%;
-    width: 90%;
-    border: 1px solid gray;
-    box-shadow: 2px 2px 2px rgb(0 0 0 / 33%);
-    border-radius: 30px;
-    margin: 10% auto;
-    /* display: grid; */
-    column-count: 4;
-    /* column-gap: 10px; */
-    justify-content: space-evenly;
-      
+  text-align: center;
+  padding: 2% 2%;
+  width: 90%;
+  border: 1px solid gray;
+  box-shadow: 2px 2px 2px rgb(0 0 0 / 33%);
+  border-radius: 30px;
+  margin: 10% auto;
+  /* display: grid; */
+  column-count: 4;
+  /* column-gap: 10px; */
+  justify-content: space-evenly;
+    
 }
 .sub-container{
-    display: flex;
-    flex-wrap: wrap;
-    border: 1px solid gray;
-    flex-direction: column;
-    padding: 5% 0px;
-    border-radius: 10px;
-    margin: 5px 0;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid gray;
+  flex-direction: column;
+  padding: 0 0 5% 0px;
+  border-radius: 10px;
+  margin: 5px 0;
 
 }
 
-  img{
-    width: 100px;
-  }
-  /* .p-title{
-    background-color: aqua;
-    position: fixed;
-  } */
-  .example-chip{
-    width: 25%;
-  }
+img{
+  width: 100px;
+}
+/* .p-title{
+  background-color: aqua;
+  position: fixed;
+} */
+.example-chip{
+  width: 25%;
+}
 
-  .chips-i-made{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    margin: auto;
-    width: 50%;
-    justify-content: center;
-  }
+.chips-i-made{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: auto;
+  width: 50%;
+  justify-content: center;
+}
+
+.mat-chip-list-wrapper {
+  justify-content: center !important;
+}
+
+.cat1,.cat2,.cat3,.cat4{
+margin-bottom: 5px;  
+border-radius: 10px;
+}
+.cat1{
+background-color: #E7F2F8;
+}
+.cat2{
+background-color: #74BDCB;
+}
+.cat3{
+background-color: #FFA384;
+}
+.cat4{
+background-color: #EFE7BC;
+}

@@ -1,119 +1,120 @@
 <!-- The about us content using tab-group -->
 <mat-tab-group mat-align-tabs="start">
-<!--About us section-->
-  <mat-tab label="About Us">
-    <div class="about-us">
-
-    
-    <div class="about-us-txt">
-      <p>
-      Jordan became a major regional ICT and ITES leader and an internationally
-      recognized exporter of ICT and ITES products & services, capitalizing on
-      its core human capital advantage
-    </p>
-    <h2>Our reason</h2>
-    <p>
-      To provide members with a platform of products & services that support
-      their continuous growth , expansion, and prosperity toward a mature sector
-      that substantially contributes to the national economy and provides
-      quality jobs for Jordanians
-    </p>
-  </div>
-  <div class="about-us-deco">
-    <img src="../../assets/image/option3.webp" alt="example" width="200px" height="300px">
-</div>
-</div>
-  </mat-tab>
-
-  <!-- contact us info -->
-
-  <mat-tab label="Contact Us"
-    ><p>
-      <mat-icon><span class="material-icons">place </span></mat-icon>AlHussein
-      Technical University Bulding 23, King Hussein Business Park, King Abdullah
-      II St 242, Amman
-    </p>
-    <p>
-      <mat-icon><span class="material-icons"> call </span></mat-icon
-      ><a href="tel:+962 786105396">+962 786105396</a>
-    </p>
-    <p>
-      <mat-icon><span class="material-icons"> email </span></mat-icon>
-      <a href="mailto:maissameer99@gmail.com">maissameer99@gmail.com</a>
-    </p>
-    <p>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7067.580509826187!2d35.8301599073593!3d31.970153439123173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ca17ed1965e8d%3A0xd93a3913affa5945!2sKing%20Hussein%20Business%20Park!5e0!3m2!1sen!2sjo!4v1662280904413!5m2!1sen!2sjo"
-        width="600"
-        height="450"
-        style="border: 0"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
-    </p>
-  </mat-tab>
-
-  <!-- QAF -->
-
-  <mat-tab label="QAF" class="mat-tab">
-   
-   
-      <form  #form="ngForm" class="qaf-form">
-
-        <div class="qaf-txt">
-          <p>If you have any questions don't hesitateand ask us we are here to help you </p>
-        </div>
-        
-        <div class="form">
-        <!-- First Name & Last Name -->
-        
-                  <mat-form-field class="example-full-width" appearance="fill">
-                    <mat-label>First name</mat-label>
-                    <input matInput name="firstname" ngModel required/>
-                  </mat-form-field>
-               
+  <!--About us section-->
+    <mat-tab label="About Us">
+      <div class="about-us">
   
-              <!-- Email -->
-  
-        
-          <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Email</mat-label>
-              <input
-                type="email"
-                matInput
-                name="email"
-                ngModel
-                [formControl]="emailFormControl"
-                placeholder="Ex. pat@example.com"
-              />
-              <mat-error
-                *ngIf="
-                  emailFormControl.hasError('email') &&
-                  !emailFormControl.hasError('required')
-                "
-              >
-                Please enter a valid email address
-              </mat-error>
-              <mat-error *ngIf="emailFormControl.hasError('required')">
-                Email is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
-            <br />
       
+      <div class="about-us-txt">
+        <p>
+        Jordan became a major regional ICT and ITES leader and an internationally
+        recognized exporter of ICT and ITES products & services, capitalizing on
+        its core human capital advantage
+      </p>
+      <h2>Our reason</h2>
+      <p>
+        To provide members with a platform of products & services that support
+        their continuous growth , expansion, and prosperity toward a mature sector
+        that substantially contributes to the national economy and provides
+        quality jobs for Jordanians
+      </p>
+    </div>
+    <div class="about-us-deco">
+      <img src="../../assets/image/option3.webp" alt="example" width="200px" height="300px">
+  </div>
+  </div>
+    </mat-tab>
+  
+    <!-- contact us info -->
+  
+    <mat-tab label="Contact Us"
+      ><p>
+        <mat-icon><span class="material-icons">place </span></mat-icon>AlHussein
+        Technical University Bulding 23, King Hussein Business Park, King Abdullah
+        II St 242, Amman
+      </p>
+      <p>
+        <mat-icon><span class="material-icons"> call </span></mat-icon
+        ><a href="tel:+962 786105396">+962 786105396</a>
+      </p>
+      <p>
+        <mat-icon><span class="material-icons"> email </span></mat-icon>
+        <a href="mailto:maissameer99@gmail.com">maissameer99@gmail.com</a>
+      </p>
+      <p>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7067.580509826187!2d35.8301599073593!3d31.970153439123173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ca17ed1965e8d%3A0xd93a3913affa5945!2sKing%20Hussein%20Business%20Park!5e0!3m2!1sen!2sjo!4v1662280904413!5m2!1sen!2sjo"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </p>
+    </mat-tab>
+  
+    <!-- QAF -->
+  
+    <mat-tab label="QAF" class="mat-tab">
+     
+     
+        <form  #form="ngForm" class="qaf-form">
+  
+          <div class="qaf-txt">
+            <p>If you have any questions don't hesitateand ask us we are here to help you </p>
+          </div>
+          
+          <div class="form">
+          <!-- First Name & Last Name -->
+          
+                    <mat-form-field class="example-full-width" appearance="fill">
+                      <mat-label>First name</mat-label>
+                      <input matInput name="firstname" ngModel required/>
+                    </mat-form-field>
+                 
+    
+                <!-- Email -->
+    
+          
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Email</mat-label>
+                <input
+                  type="email"
+                  matInput
+                  name="email"
+                  ngModel
+                  [formControl]="emailFormControl"
+                  placeholder="Ex. pat@example.com"
+                />
+                <mat-error
+                  *ngIf="
+                    emailFormControl.hasError('email') &&
+                    !emailFormControl.hasError('required')
+                  "
+                >
+                  Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                  Email is <strong>required</strong>
+                </mat-error>
+              </mat-form-field>
+              <br />
         
-        <!-- Texteara -->
-        
-          <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>The Question</mat-label>
-              <textarea name="texteara" ngModel matInput placeholder="Where can I find...?"></textarea>
-            </mat-form-field>
-       
-          <button type="submit" mat-raised-button color="primary" class="submit-btn" > Submit </button>
-        </div>
-      </form>
-    
-    
-  </mat-tab>
-    
-</mat-tab-group>
+          
+          <!-- Texteara -->
+          
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>The Question</mat-label>
+                <textarea name="texteara" ngModel matInput placeholder="Where can I find...?"></textarea>
+              </mat-form-field>
+         
+            <button type="submit" mat-raised-button color="primary" class="submit-btn" > Submit </button>
+          </div>
+        </form>
+      
+      
+    </mat-tab>
+      
+  </mat-tab-group>
+  

@@ -14,7 +14,6 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { AdminApproveComponent } from './admin-approve/admin-approve.component';
 import { UesrVeiwComponent } from './uesr-veiw/uesr-veiw.component';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { Route, RouterModule } from '@angular/router';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -22,7 +21,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatChipsModule} from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatTabsModule } from '@angular/material/tabs';
+import {MatTabsModule} from '@angular/material/tabs';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
@@ -36,6 +35,9 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
 import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatCommonModule} from '@angular/material/core';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 const routes: Route[] = [
   { path: '', redirectTo:'/landing-page', pathMatch: 'full' },
@@ -67,14 +69,12 @@ const routes: Route[] = [
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatToolbarModule,
     MatIconModule,
     RouterModule.forRoot(routes),
     MatExpansionModule,
     MatFormFieldModule,
     MatChipsModule,
     MatMenuModule,
-    MatTabsModule,
     ReactiveFormsModule,
     MatInputModule,
     FormsModule,
@@ -87,6 +87,11 @@ const routes: Route[] = [
     provideFirestore(() => getFirestore()),
     provideAuth(() => getAuth()),
     ShareIconsModule,
+    MatCommonModule,
+    MatSnackBarModule,
+    ShareButtonsModule,
+    MatToolbarModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

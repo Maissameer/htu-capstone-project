@@ -1,115 +1,93 @@
 <div class="landing-page">
 
-    <!-- The categories -->
-    <h1>Jordan Startup Map</h1>
-    <mat-chip-list
-      class="example-chip chips-i-made">
-      <mat-chip
-        class="example-box"
-        *ngFor="let sector of sectors">
-        {{sector.name}}
-      </mat-chip>
-    </mat-chip-list>
+  <!-- The categories -->
+  <h1>Jordan Startup Map</h1>
+  <mat-chip-list
+    class="example-chip chips-i-made">
+    <mat-chip
+      class="example-box"
+      *ngFor="let sector of sectors">
+      {{sector.name}}
+    </mat-chip>
+  </mat-chip-list>
 
-    <!-- <div class="container-fluid py-3">
-      <h1>Angular Share Buttons</h1>
-    
-      <share-buttons theme="circles-dark"
-        [include]="['copy', 'facebook', 'email', 'messenger', 'mix', 'line', 'linkedin', 'pinterest', 'print', 'reddit', 'sms', 'telegram', 'tumblr', 'twitter', 'viber', 'vk', 'xing', 'whatsapp']"
-        [showIcon]="true"
-        [showText]="false"
-        url="https://rodrigo.kamada.com.br/"
-        description="Angular Share Buttons"
-        twitterAccount="rodrigokamada"
-        class="pt-5">
-      </share-buttons>
-    
-      <share-buttons theme="modern-dark"
-        [include]="['copy', 'facebook', 'email', 'messenger', 'mix', 'line', 'linkedin', 'pinterest', 'print', 'reddit', 'sms', 'telegram', 'tumblr', 'twitter', 'viber', 'vk', 'xing', 'whatsapp']"
-        [showIcon]="true"
-        [showText]="true"
-        url="https://rodrigo.kamada.com.br/"
-        description="Angular Share Buttons"
-        twitterAccount="rodrigokamada"
-        class="pt-5">
-      </share-buttons>
-    
-      <share-buttons theme="modern-dark"
-        [include]="['copy', 'facebook', 'email', 'messenger', 'mix', 'line', 'linkedin', 'pinterest', 'print', 'reddit', 'sms', 'telegram', 'tumblr', 'twitter', 'viber', 'vk', 'xing', 'whatsapp']"
-        [showIcon]="false"
-        [showText]="true"
-        url="https://rodrigo.kamada.com.br/"
-        description="Angular Share Buttons"
-        twitterAccount="rodrigokamada"
-        class="pt-5">
-      </share-buttons>
-    </div> -->
-    
-    <!-- the responsive grid -->
-    <div class="container">
-      <div class="map sub-container" >
-           <p>Jordan Map</p>
-    <a routerLink="/"><img src="../../assets/image/jordan-map.webp" alt="Jordan Startups Map"></a>
-    </div>
-    <div class="printing sub-container">
-      <a routerLink="admin-veiw"><img src="../../assets/image/printing.jpg" alt="Printie 3D"></a>
-    </div>
-    <div class="arch sub-container">
-      <a routerLink="admin-veiw"><img src="../../assets/image/efresso.jpg" alt="efresso"></a>
-      <a routerLink="admin-veiw"><img src="../../assets/image/ghroom.png" alt="GHOORCOM"></a>
-      <a routerLink="admin-veiw"><img src="../../assets/image/twig.jpg" alt="TWIG"></a>
-    <a routerLink="admin-veiw"><img src="../../assets/image/juthor.jpg" alt="Juthor"></a>
-    <a routerLink="admin-veiw"><img src="../../assets/image/sager.png" alt="Sager"></a>
-    <a routerLink="admin-veiw"><img src="../../assets/image/rozme.png" alt="Rozme"></a>
-    </div>
-    <div class="blockchain sub-container">
-      <a routerLink="admin-veiw"><img src="../../assets/image/repzo.png" alt="RepZo"></a>
-    </div>
-    <div class="data-ai sub-container">
-      <a routerLink="admin-veiw"><img src="../../assets/image/algebra.jpg" alt="Algebra"></a>
-      <a routerLink="admin-veiw"><img src="../../assets/image/whisy.jpg" alt="whysie"></a>
-      <a routerLink="admin-veiw"><img src="../../assets/image/datahub.png" alt="DataHub"></a>
-    <a routerLink="admin-veiw"><img src="../../assets/image/arabot.jpg" alt="arabot"></a>
-    <a routerLink="admin-veiw"><img src="../../assets/image/larimar.png" alt="Larimar"></a>
+  
+  <!-- the responsive grid -->
+  <div class="container">
+    <div class=" sub-container" >
+      <div class="cat1">  <p>Jordan Map</p> </div>
+  <a routerLink="/"><img src="../../assets/image/jordan-map.webp" alt="Jordan Startups Map"></a>
   </div>
-    <div class="cyper sub-container">
-      <a routerLink="admin-veiw"><img src="../../assets/image/risk.jpg" alt="Risk Mission"></a>
-      <a routerLink="admin-veiw"><img src="../../assets/image/cgurds.jpg" alt="CGuards"></a>
-      <a routerLink="admin-veiw"><img src="../../assets/image/future.jpg" alt="Future Advanced"></a>
-    <a routerLink="admin-veiw"><img src="../../assets/image/green.jpg" alt="Green Circle"></a>
-    <a routerLink="admin-veiw"><img src="../../assets/image/salalem.png" alt="Salalem"></a>
-    </div>
-    <div class="ecommerce sub-container">
-      <a routerLink="admin-veiw"><img src="../../assets/image/nardeal.png" alt="Nardeal"></a>
-      <a routerLink="admin-veiw"><img src="../../assets/image/fitly.png" alt="FITELY"></a>
-      <a routerLink="admin-veiw"><img src="../../assets/image/olahub.png" alt="OlaHub"></a>
-      <a routerLink="admin-veiw"><img src="../../assets/image/pinpay.png" alt="PinPay"></a>
-    </div>
-    <div class="edtech sub-container">
-      <a routerLink="admin-veiw"><img src="../../assets/image/joseoh.jpg" alt="B12"></a>
-      <a routerLink="admin-veiw"><img src="../../assets/image/steam.png" alt="Jordan Steam"></a>
-      <a routerLink="admin-veiw"><img src="../../assets/image/kaleela.png" alt="Kaleela"></a>
-      <a routerLink="admin-veiw"><img src="../../assets/image/techtouch.png" alt="TechnTouch"></a>
-      <a routerLink="admin-veiw"><img src="../../assets/image/jobrains.png" alt="JoBrains"></a>
-      <a routerLink="admin-veiw"><img src="../../assets/image/schoolego.png" alt="Schoolego"></a>
-    </div>
-    <div class="iot sub-container">
-      <a routerLink="admin-veiw"><img src="../../assets/image/twinship.jpg" alt="Twins Chip"></a>
-      <a routerLink="admin-veiw"><img src="../../assets/image/smarty.jpg" alt="Smarty Plug"></a>
-    </div>
-    <div class="gaming sub-container">
-      <a routerLink="admin-veiw"><img src="../../assets/image/PIXITOON.jpg" alt="PIXITOON"></a>
-      <a routerLink="admin-veiw"><img src="../../assets/image/tamatem.png" alt="tamatem"></a>
-    </div>
-    <div class="sportstech sub-container">
-      <a routerLink="admin-veiw"><img src="../../assets/image/fitly.png" alt="Fitely"></a>
-      <a routerLink="admin-veiw"><img src="../../assets/image/karbon.png" alt="Karbon"></a>
-    </div>
-    <div class="other sub-container">
-      <a routerLink="admin-veiw"><img src="../../assets/image/yotta.png" alt="Yotta"></a>
-      <a routerLink="admin-veiw"><img src="../../assets/image/clouds.png" alt="Arabia Clouds"></a>
-    </div>
-    </div>
-    </div>
-    
-    
+  <div class=" sub-container">
+    <div class="cat2">  <p>J3D Printing</p> </div>
+    <a routerLink="admin-veiw"><img src="../../assets/image/printing.jpg" alt="Printie 3D"></a>
+  </div>
+  <div class=" sub-container">
+    <div class="cat3">  <p>Archtech</p> </div>
+    <a routerLink="admin-veiw"><img src="../../assets/image/efresso.jpg" alt="efresso"></a>
+    <a routerLink="admin-veiw"><img src="../../assets/image/ghroom.png" alt="GHOORCOM"></a>
+    <a routerLink="admin-veiw"><img src="../../assets/image/twig.jpg" alt="TWIG"></a>
+  <a routerLink="admin-veiw"><img src="../../assets/image/juthor.jpg" alt="Juthor"></a>
+  <a routerLink="admin-veiw"><img src="../../assets/image/sager.png" alt="Sager"></a>
+  <a routerLink="admin-veiw"><img src="../../assets/image/rozme.png" alt="Rozme"></a>
+  </div>
+  <div class=" sub-container">
+    <div class="cat4">  <p>BlockChain</p> </div>
+    <a routerLink="admin-veiw"><img src="../../assets/image/repzo.png" alt="RepZo"></a>
+  </div>
+  <div class=" sub-container">
+    <div class="cat1">  <p>Data AI& ML</p> </div>
+    <a routerLink="admin-veiw"><img src="../../assets/image/algebra.jpg" alt="Algebra"></a>
+    <a routerLink="admin-veiw"><img src="../../assets/image/whisy.jpg" alt="whysie"></a>
+    <a routerLink="admin-veiw"><img src="../../assets/image/datahub.png" alt="DataHub"></a>
+  <a routerLink="admin-veiw"><img src="../../assets/image/arabot.jpg" alt="arabot"></a>
+  <a routerLink="admin-veiw"><img src="../../assets/image/larimar.png" alt="Larimar"></a>
+</div>
+  <div class=" sub-container">
+    <div class="cat2">  <p>Cyper Security</p> </div>
+    <a routerLink="admin-veiw"><img src="../../assets/image/risk.jpg" alt="Risk Mission"></a>
+    <a routerLink="admin-veiw"><img src="../../assets/image/cgurds.jpg" alt="CGuards"></a>
+    <a routerLink="admin-veiw"><img src="../../assets/image/future.jpg" alt="Future Advanced"></a>
+  <a routerLink="admin-veiw"><img src="../../assets/image/green.jpg" alt="Green Circle"></a>
+  <a routerLink="admin-veiw"><img src="../../assets/image/salalem.png" alt="Salalem"></a>
+  </div>
+  <div class=" sub-container">
+    <div class="cat3">  <p>Ecommerce</p> </div>
+    <a routerLink="admin-veiw"><img src="../../assets/image/nardeal.png" alt="Nardeal"></a>
+    <a routerLink="admin-veiw"><img src="../../assets/image/fitly.png" alt="FITELY"></a>
+    <a routerLink="admin-veiw"><img src="../../assets/image/olahub.png" alt="OlaHub"></a>
+    <a routerLink="admin-veiw"><img src="../../assets/image/pinpay.png" alt="PinPay"></a>
+  </div>
+  <div class=" sub-container">
+    <div class="cat4">  <p>Edtech</p> </div>
+    <a routerLink="admin-veiw"><img src="../../assets/image/joseoh.jpg" alt="B12"></a>
+    <a routerLink="admin-veiw"><img src="../../assets/image/steam.png" alt="Jordan Steam"></a>
+    <a routerLink="admin-veiw"><img src="../../assets/image/kaleela.png" alt="Kaleela"></a>
+    <a routerLink="admin-veiw"><img src="../../assets/image/techtouch.png" alt="TechnTouch"></a>
+    <a routerLink="admin-veiw"><img src="../../assets/image/jobrains.png" alt="JoBrains"></a>
+    <a routerLink="admin-veiw"><img src="../../assets/image/schoolego.png" alt="Schoolego"></a>
+  </div>
+  <div class=" sub-container">
+    <div class="cat1">  <p>IOT</p> </div>
+    <a routerLink="admin-veiw"><img src="../../assets/image/twinship.jpg" alt="Twins Chip"></a>
+    <a routerLink="admin-veiw"><img src="../../assets/image/smarty.jpg" alt="Smarty Plug"></a>
+  </div>
+  <div class=" sub-container">
+    <div class="cat2">  <p>Gaming</p> </div>
+    <a routerLink="admin-veiw"><img src="../../assets/image/PIXITOON.jpg" alt="PIXITOON"></a>
+    <a routerLink="admin-veiw"><img src="../../assets/image/tamatem.png" alt="tamatem"></a>
+  </div>
+  <div class=" sub-container">
+    <div class="cat3">  <p>Sportech</p> </div>
+    <a routerLink="admin-veiw"><img src="../../assets/image/fitly.png" alt="Fitely"></a>
+    <a routerLink="admin-veiw"><img src="../../assets/image/karbon.png" alt="Karbon"></a>
+  </div>
+  <div class=" sub-container">
+    <div class="cat4">  <p>Jordan Map</p> </div>
+    <a routerLink="admin-veiw"><img src="../../assets/image/yotta.png" alt="Yotta"></a>
+    <a routerLink="admin-veiw"><img src="../../assets/image/clouds.png" alt="Arabia Clouds"></a>
+  </div>
+  </div>
+  </div>
+  
+  
