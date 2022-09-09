@@ -87,12 +87,13 @@
   [floatLabel]="getFloatLabelValue()">
 <input matInput placeholder="Enter the No." type="number"
 [formControl]="employee"
+min="50" 
 >
 </mat-form-field>
   </div>
 
   <!--Year of estableshment-->
-  <mat-form-field appearance="fill">
+  <!-- <mat-form-field appearance="fill">
     <mat-label>Month and Year</mat-label>
     <input matInput [matDatepicker]="dp" [formControl]="date">
     <mat-hint>MM/YYYY</mat-hint>
@@ -102,7 +103,7 @@
                     (monthSelected)="setMonthAndYear($event, dp)"
                     panelClass="example-month-picker">
     </mat-datepicker>
-  </mat-form-field>
+  </mat-form-field> -->
   <!--website URL-->
   <div>
     <label>Website URL </label>
@@ -131,7 +132,7 @@
   </mat-form-field>
 
    <!-- button submit -->
-   <button type="submit" mat-raised-button color="primary" (click)="done()"> Add </button>
+    <button type="submit" mat-raised-button color="primary" (click)="done()"  [disabled]="loginForm.invalid"> Add </button>
   </form>
   </div>
   </div>
