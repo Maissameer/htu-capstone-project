@@ -44,7 +44,6 @@ export const MY_FORMATS = {
 
 })
 export class AdminStartupsComponent implements OnInit {
-loginForm: any;
 
   ngOnInit(): void {
   }
@@ -101,17 +100,43 @@ loginForm: any;
 
   // }) 
 
-  employee = new FormControl('', [Validators.required]);
-  userName = new FormControl('', [Validators.required]);
-  city = new FormControl('', [Validators.required]);
-  founderName = new FormControl('', [Validators.required]);
-  logo = new FormControl('', [Validators.required]);
-  category = new FormControl('', [Validators.required]);
-  City = new FormControl('', [Validators.required]);
-  url = new FormControl('', [Validators.required]);
-  emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+  loginForm = this.fb.group({
+    employee : new FormControl('', [Validators.required]),
+    userName : new FormControl('', [Validators.required]),
+    founderName : new FormControl('', [Validators.required]),
+    logo : new FormControl('', [Validators.required]),
+    category : new FormControl('', [Validators.required]),
+    url : new FormControl('', [Validators.required]),
+    emailFormControl :new FormControl('', [Validators.required, Validators.email])
+  
+  }) 
+  
+  get employee(){
+    return this.loginForm.controls.employee;
+   }
+  
+   get userName(){
+    return this.loginForm.controls.userName;
+   }
+  
+   get logo(){
+    return this.loginForm.controls.logo;
+   }
+   get category(){
+    return this.loginForm.controls.category;
+   }
+   get url(){
+    return this.loginForm.controls.url;
+   }
+   get emailFormControl(){
+    return this.loginForm.controls.emailFormControl;
+   }
+   get founderName(){
+    return this.loginForm.controls.founderName;
+   }
+  
 
-
+   
   // get userName(){
   //   return this.Options.controls.userName;
   //  }

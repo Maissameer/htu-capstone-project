@@ -47,22 +47,23 @@ export class AdminSectorsComponent implements OnInit {
      {name: 'OTHER'},
    ];
 
-   Options = this.fb.group({
+   loginForm = this.fb.group({
     userName: this.fb.control('',[Validators.required]),
     logo: this.fb.control('',[Validators.required]),
     category:this.fb.control('',[Validators.required]),
   }) 
 
   get userName(){
-    return this.Options.controls.userName;
+    return this.loginForm.controls.userName;
    }
    
    get logo(){
-    return this.Options.controls.logo;
+    return this.loginForm.controls.logo;
    }
-   get cateogory(){
-    return this.Options.controls.category;
+   get category(){
+    return this.loginForm.controls.category;
    }
+
 
    horizontalPosition: MatSnackBarHorizontalPosition = 'center';
    verticalPosition: MatSnackBarVerticalPosition = 'top';

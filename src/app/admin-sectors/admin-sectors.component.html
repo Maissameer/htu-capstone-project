@@ -14,7 +14,7 @@
     [hideRequiredMarker]="hideRequiredControl.value"
     [floatLabel]="getFloatLabelValue()">
   <input matInput placeholder="Enter the Name" type="text"
-  formControlName="userName"
+  [formControl]="userName"
   >
   <mat-error *ngIf="userName?.errors?.['required']"
             >Email is Required</mat-error
@@ -29,7 +29,7 @@
     [hideRequiredMarker]="hideRequiredControl.value"
     [floatLabel]="getFloatLabelValue()">
   <input type="url"
-  formControlName="logo"
+  [formControl]="logo"
    matInput placeholder="Enter the logo URL" >
    <mat-error *ngIf="logo?.errors?.['required']"
             >Email is Required</mat-error
@@ -43,7 +43,6 @@
     <mat-form-field  class="example-full-width" appearance="outline"
     [floatLabel]="getFloatLabelValue()">
   <input type="color" 
-  formControlName="color"
   matInput placeholder="Enter the logo URL" >
   </mat-form-field>
   </div>
@@ -52,7 +51,7 @@
     <br>
   <mat-form-field class="example-full-width" appearance="outline">
     <mat-label>Select the category</mat-label>
-    <mat-select formControlName="category"
+    <mat-select [formControl]="category"
     >
     <mat-option  *ngFor="let option of sectorsOptions"> 
       {{option.name}}

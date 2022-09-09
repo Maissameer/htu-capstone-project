@@ -1,3 +1,4 @@
+import { AuthGuard } from './auth.guard';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -38,17 +39,22 @@ import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCommonModule} from '@angular/material/core';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { DetailsComponent } from './details/details.component';
 
 const routes: Route[] = [
   { path: '', redirectTo:'/landing-page', pathMatch: 'full' },
+  { path: 'landing-page', children:[
+    { path: '', component: LandingPageComponent, pathMatch: 'full' },
+    { path: 'admin-sectors', component: AdminSectorsComponent },
+    { path:'admin-startups', component: AdminStartupsComponent},
+    { path:'admin-approve', component: AdminApproveComponent},
+    { path:'about-us', component: AboutUsComponent},
+    { path:'admin-veiw', component: AdminVeiwComponent , canActivate:[AuthGuard]}, 
+    { path:'admin-login', component: AdminLoginComponent},
+    { path:'user-veiw', component: UesrVeiwComponent},
+    { path:'user-veiw/', component: UesrVeiwComponent}
+  ] },
   { path:'landing-page', component: LandingPageComponent},
-  { path: 'admin-sectors', component: AdminSectorsComponent },
-  { path:'admin-startups', component: AdminStartupsComponent},
-  { path:'admin-approve', component: AdminApproveComponent},
-  { path:'about-us', component: AboutUsComponent},
-  { path:'admin-veiw', component: AdminVeiwComponent},
-  { path:'admin-login', component: AdminLoginComponent},
-  { path:'user-veiw', component: UesrVeiwComponent},
   { path: '**' , component: PagenotfoundComponent}
   
 ];
@@ -63,7 +69,8 @@ const routes: Route[] = [
     PagenotfoundComponent,
     AboutUsComponent,
     AdminApproveComponent,
-    UesrVeiwComponent
+    UesrVeiwComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
