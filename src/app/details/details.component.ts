@@ -12,4 +12,13 @@ export class DetailsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // this.form.statusChanges.subscribe((data)=> ){
+  //   this.statusChanges.push(data);
+  //   console.log(this.statusChanges)
+  // }
+  // this.form.valueChanges.subscribe((data)=> ){
+  //   this.valueChanges.push(data);
+  // }
+
+
 }

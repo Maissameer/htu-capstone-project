@@ -1,0 +1,15 @@
+.example-card {
+    max-width: 400px;
+  }
+/* .my-card__media {
+    background-image: url("pretty.jpg");
+  } */
+.example-card{
+    text-align: center;
+    padding: 20px 0;
+    width: 50%;
+    border: 1px solid gray;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.334);
+    border-radius: 30px;
+    margin: 50px auto ;
+}

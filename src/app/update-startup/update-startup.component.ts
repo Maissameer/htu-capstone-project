@@ -30,20 +30,12 @@ export const MY_FORMATS = {
     monthYearA11yLabel: 'MMMM YYYY',
   },
 };
-
 @Component({
-  selector: 'app-admin-startups',
-  templateUrl: './admin-startups.component.html',
-  styleUrls: ['./admin-startups.component.css'],
-  providers: [
-    // {provide: DateAdapter, useClass: MomentDateAdapter, deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS]},
-    // {provide: MAT_MOMENT_DATE_ADAPTER_OPTIONS, useValue: { useUtc: true } },
-    {provide: MAT_DATE_FORMATS, useValue: MAT_DATE_FORMATS}
-  ]
-
-
+  selector: 'app-update-startup',
+  templateUrl: './update-startup.component.html',
+  styleUrls: ['./update-startup.component.css']
 })
-export class AdminStartupsComponent implements OnInit {
+export class UpdateStartupComponent implements OnInit {
 
   ngOnInit(): void {
   }

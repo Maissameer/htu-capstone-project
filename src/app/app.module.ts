@@ -14,6 +14,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AdminApproveComponent } from './admin-approve/admin-approve.component';
 import { UesrVeiwComponent } from './uesr-veiw/uesr-veiw.component';
+import { DetailsComponent } from './details/details.component';
+import { ProfileListComponent } from './profile-list/profile-list.component';
 
 import { MatIconModule } from '@angular/material/icon';
 import { Route, RouterModule } from '@angular/router';
@@ -39,7 +41,9 @@ import { ShareIconsModule } from 'ngx-sharebuttons/icons';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatCommonModule} from '@angular/material/core';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { DetailsComponent } from './details/details.component';
+import {MatCardModule} from '@angular/material/card';
+import { UpdateSectorComponent } from './update-sector/update-sector.component';
+import { UpdateStartupComponent } from './update-startup/update-startup.component';
 
 const routes: Route[] = [
   { path: '', redirectTo:'/landing-page', pathMatch: 'full' },
@@ -49,12 +53,16 @@ const routes: Route[] = [
     { path:'admin-startups', component: AdminStartupsComponent},
     { path:'admin-approve', component: AdminApproveComponent},
     { path:'about-us', component: AboutUsComponent},
-    { path:'admin-veiw', component: AdminVeiwComponent , canActivate:[AuthGuard]}, 
+    { path:'admin-veiw', component: AdminVeiwComponent , canActivate:[AuthGuard] , children:[
+      { path: '', component: AdminVeiwComponent, pathMatch: 'full' },
+      { path:'admin-veiw/:id', component: DetailsComponent}
+
+    ]}, 
     { path:'admin-login', component: AdminLoginComponent},
+    { path:'list', component: ProfileListComponent},
     { path:'user-veiw', component: UesrVeiwComponent},
-    { path:'user-veiw/', component: UesrVeiwComponent}
   ] },
-  { path:'landing-page', component: LandingPageComponent},
+  // { path:'landing-page', component: LandingPageComponent},
   { path: '**' , component: PagenotfoundComponent}
   
 ];
@@ -70,7 +78,10 @@ const routes: Route[] = [
     AboutUsComponent,
     AdminApproveComponent,
     UesrVeiwComponent,
-    DetailsComponent
+    DetailsComponent,
+    ProfileListComponent,
+    UpdateSectorComponent,
+    UpdateStartupComponent
   ],
   imports: [
     BrowserModule,
@@ -98,7 +109,8 @@ const routes: Route[] = [
     MatSnackBarModule,
     ShareButtonsModule,
     MatToolbarModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

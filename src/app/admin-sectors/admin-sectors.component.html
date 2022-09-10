@@ -28,9 +28,9 @@
     <mat-form-field  class="example-full-width" appearance="outline"
     [hideRequiredMarker]="hideRequiredControl.value"
     [floatLabel]="getFloatLabelValue()">
-  <input type="url"
-  [formControl]="logo"
-   matInput placeholder="Enter the logo URL" >
+    <input type="file" #inputFile accept="image/*" hidden [formControl]="logo"
+     value="select image" >
+ 
    <mat-error *ngIf="logo?.errors?.['required']"
             >Email is Required</mat-error
           >

@@ -1,5 +1,3 @@
-import { from } from 'rxjs';
-import { Profile, ProfileService } from './../profile.service';
 import { Router } from '@angular/router';
 // import { sectors } from './../landing-page/landing-page.component';
 import { Component, OnInit } from '@angular/core';
@@ -11,17 +9,12 @@ import {MatSnackBar, MatSnackBarHorizontalPosition,
 export interface categoryOptions {
   name: string;
 }
-
 @Component({
-  selector: 'app-admin-sectors',
-  templateUrl: './admin-sectors.component.html',
-  styleUrls: ['./admin-sectors.component.css']
+  selector: 'app-update-sector',
+  templateUrl: './update-sector.component.html',
+  styleUrls: ['./update-sector.component.css']
 })
-export class AdminSectorsComponent implements OnInit {
-   
-  constructor(private fb : FormBuilder,private _snackBar: MatSnackBar ,private  router: Router,
-    private profileService: ProfileService) {}
-
+export class UpdateSectorComponent implements OnInit {
 
   ngOnInit(): void {
   }
@@ -32,7 +25,8 @@ export class AdminSectorsComponent implements OnInit {
     floatLabel: this.floatLabelControl,
   });
 
- 
+  constructor(private fb : FormBuilder,private _snackBar: MatSnackBar ,private  router: Router) {}
+
   getFloatLabelValue(): FloatLabelType {
     return this.floatLabelControl.value || 'auto';
   }
@@ -79,10 +73,5 @@ export class AdminSectorsComponent implements OnInit {
       verticalPosition: this.verticalPosition,
     });
 
-
-    //save data 
-    this.profileService.addProfile(this.options.value as Profile)
-    //navigate to list page
-this.router.navigate(['/profile-list'])
   }
 }

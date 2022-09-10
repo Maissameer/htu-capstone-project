@@ -1,0 +1,30 @@
+
+.admin-sectors{
+    text-align: center;
+    margin-top: 5%;
+    align-items: center;
+    /* background-color: rgb(234, 233, 233); */
+  }
+  .sectors-form{
+    width: 75%;
+    border: 1px solid gray;
+    margin: auto;
+  box-shadow: 12px 2px 12px rgba(0, 0, 0, 0.334);
+  padding: 10% 5%;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  
+  }
+   .sectors-form > div{
+    display: flex;
+    flex-direction: column;
+   }
+  
+   div > label{
+    font-size: medium;
+   }
+   .sectors-form > label{
+    font-size: medium;
+   }
