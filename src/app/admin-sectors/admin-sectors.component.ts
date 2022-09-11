@@ -1,9 +1,9 @@
 import { from } from 'rxjs';
-import { Profile, ProfileService } from './../profile.service';
-import { Router } from '@angular/router';
+import { ProfileService } from './../profile.service';
+import { Router, ActivatedRoute } from '@angular/router';
 // import { sectors } from './../landing-page/landing-page.component';
 import { Component, OnInit } from '@angular/core';
- import {FormBuilder, FormControl, Validators} from '@angular/forms';
+ import {FormBuilder, FormControl, FormControlStatus, Validators} from '@angular/forms';
 import {FloatLabelType} from '@angular/material/form-field';
 import {MatSnackBar, MatSnackBarHorizontalPosition,
   MatSnackBarVerticalPosition,} from '@angular/material/snack-bar';
@@ -20,8 +20,10 @@ export interface categoryOptions {
 export class AdminSectorsComponent implements OnInit {
    
   constructor(private fb : FormBuilder,private _snackBar: MatSnackBar ,private  router: Router,
-    private profileService: ProfileService) {}
-
+    private profileService: ProfileService,private route: ActivatedRoute
+    ) {}
+    statusChanges: FormControlStatus [] = [];
+    valueChanges: any [] = [];
 
   ngOnInit(): void {
   }
@@ -81,8 +83,10 @@ export class AdminSectorsComponent implements OnInit {
 
 
     //save data 
-    this.profileService.addProfile(this.options.value as Profile)
+   // this.profileService.addProfile(this.options.value as Profile)
     //navigate to list page
 this.router.navigate(['/profile-list'])
   }
+
+  
 }

@@ -5,6 +5,18 @@
   align-items: center;
   /* background-color: rgb(234, 233, 233); */
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field {
+  margin: 10px;
+}
+
+
+
 .startup-form{
   width: 75%;
   border: 1px solid gray;

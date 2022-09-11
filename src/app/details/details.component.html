@@ -1,16 +1,21 @@
-<button type="submit">submit</button>
-<!-- <button (click)="setValue()">setValue</button>
-<button (click)="patchValue()">patchValue</button>
-
-
-<div>
-    {{form.value |json}}
-</div>
-
-<div *ngFor="let element of statusChanges">
-{{element | json}}
-</div>
-
-<div *ngFor="let element of valueChanges">
-    {{element | json}}
-    </div> -->
+<div class="detail">
+    <h2>{{ profile.userName }}</h2>
+    <h4>{{ profile.category }}</h4>
+    <div class="content">
+      <img [src]="profile.logo" />
+      <div>
+        <p>Founder Name {{ profile.founderName }}</p>
+        <p>NO. of Employees {{ profile.employee }}</p>
+        <p>
+          {{ profile.url }}
+        </p>
+        <p>
+            {{ profile.emailFormControl }}
+        </p>
+      </div>
+    </div>
+    <div>
+      <button (click)="update()" mat-raised-button color="primary">Edit</button>
+      <button (click)="delete()" mat-raised-button color="warn" >Delete</button>
+    </div>
+  </div>

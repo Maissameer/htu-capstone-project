@@ -1,61 +1,59 @@
-import { from, Observable } from 'rxjs';
-// import { Profile } from './profile.service';
+import {
+  CollectionReference,
+  DocumentData,
+  addDoc,
+  collection,
+  deleteDoc,
+  doc,
+  updateDoc,
+} from '@firebase/firestore';
+import { Firestore, collectionData, docData } from '@angular/fire/firestore';
+
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Profile } from './startups-profile';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class ProfileService {
-  delete(id: string) {
-    throw new Error('Method not implemented.');
+private profilesCollection: CollectionReference<DocumentData>;
+
+  constructor( private firestore: Firestore){
+    this.profilesCollection = collection(this.firestore,'/profiles');
   }
-id: number = 2;
- profiles : Profile[] = [
-  {
-    id: 1,
-  userName: 'mais',
-  logo: 'logo.com',
-  city:'amman',
-  category:'printing',
-  founderName:'hi',
-  employee: 30,
-  url: 'dld.com',
-  email: 'htu@gmail.com'
-}
- ]
-getProfiles(): Observable<Profile>{
-    return from(this.profiles);
-}
- addProfile(profile : Profile){
-  profile.id = this.id+1;
-  this.profiles.push(profile); 
+
+  //gat all data
+  getAll() {
+    return collectionData(this.profilesCollection, {
+      idField: 'id',
+    }) as Observable<Profile[]>;
+  }
+
+//gat only a spicefic data
+  get(id: string){
+    const docReference = doc(this.firestore,`/profiles/${id}`);
+    return docData(docReference, {idField: 'id'});
+  }
+
+  //create new data
+  create(profile: Profile){
+    return addDoc(this.profilesCollection,profile);
+  }
+
+  //update the data
+  update( profile: Profile){
+    const docReference = doc(this.firestore, `profiles/${profile.id}`);
+    return updateDoc(docReference, {...profile});
+  }
+//delete
+  delete(id: string){
+    const docReference = doc(this.firestore, `profiles/${id}`);
+    return deleteDoc(docReference);
+  }
 }
 
- removeProfile(id: number){
-  this.profiles = this.profiles.filter((value)=> {
-    value.id != id;
-  })
- }
-
- updateProfile(profile : Profile){
- const indexOfProfile = this.profiles.findIndex((data)=> data.id == profile.id);
- this.profiles[indexOfProfile] = profile;
- }
-
- getProfile(id : number){
-   return this.profiles.filter((data)=> data.id == id)[0];
- }
-  constructor() { }
-}
-
-export interface Profile {
-  id ?: number,
-  userName: string,
-  logo: string,
-  city:string,
-  category:string,
-  founderName:string,
-  employee: number,
-  url: string,
-  email: string
-}
+ 

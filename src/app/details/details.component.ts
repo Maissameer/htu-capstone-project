@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Profile } from '../startups-profile';
+
 
 @Component({
   selector: 'app-details',
@@ -7,18 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsComponent implements OnInit {
 
+  @Input() profile: Profile;
+  @Output() updateprofile = new EventEmitter<void>();
+  @Output() deleteProfile = new EventEmitter<void>();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  // this.form.statusChanges.subscribe((data)=> ){
-  //   this.statusChanges.push(data);
-  //   console.log(this.statusChanges)
-  // }
-  // this.form.valueChanges.subscribe((data)=> ){
-  //   this.valueChanges.push(data);
-  // }
+  update() {
+    this.updateprofile.emit();
+  }
 
-
+  delete() {
+    this.deleteProfile.emit();
+  }
 }

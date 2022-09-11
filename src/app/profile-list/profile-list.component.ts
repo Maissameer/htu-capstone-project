@@ -1,8 +1,8 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { Profile, ProfileService } from './../profile.service';
-import { Component, OnInit } from '@angular/core';
-import { MatCard, MatCardContent } from '@angular/material/card';
-
+import { ProfileService } from './../profile.service';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Observable } from 'rxjs';
+import{ Profile} from '../startups-profile'
 
 @Component({
   selector: 'app-profile-list',
@@ -10,20 +10,26 @@ import { MatCard, MatCardContent } from '@angular/material/card';
   styleUrls: ['./profile-list.component.css']
 })
 export class ProfileListComponent implements OnInit {
-  profiles: any;
-element: any;
+  @Input() profile$: Observable<Profile[]>;
+  @Output() ProfileEmitter = new EventEmitter<Profile>();
 
+ 
+ 
   //  profiles:  MatTableDataSource<Profile> = new  MatTableDataSource<Profile>([]);
+ 
+ 
   constructor(private profileService: ProfileService,private router: Router,
     private route: ActivatedRoute) {
-    this.profileService.getProfiles().subscribe((data)=> {
-      this.profiles.push(data);
-    })
+  //  this.profileService.getAll().subscribe((data)=> {
+  //   this.profiles.data = data;
+  //  })
    }
  id ?: number; 
  
-
- const idFromRoute = this.route.snapshot.paramMap.get('id');
+ selectProfile(profile: Profile) {
+  this.ProfileEmitter.emit(profile);
+}
+//  const idFromRoute = this.route.snapshot.paramMap.get('id');
  if( idFromRoute: any ){
   this.id = Number(idFromRoute) ;
  }
@@ -42,14 +48,11 @@ element: any;
   }
 
   deleteProfile(id: string){
-    //  this.profileService.removeProfile(id);
-     console.log(this.profiles.data);
-     this.profiles.data = [];
-    this.profileService.getProfiles().subscribe((data)=> {
-       this.profiles.data.push(data);
-   });
-    this.profileService.delete(id).then(()=> {
-      alert('data was deleted successfully');
-    });
+   this.profileService.delete(id).then(()=> {
+    alert('data was deleted successfully');
+   })
+    // this.profileService.delete(id).then(()=> {
+    //   alert('data was deleted successfully');
+    // });
   }
 }

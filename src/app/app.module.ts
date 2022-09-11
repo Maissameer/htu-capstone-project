@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
 
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminSectorsComponent } from './admin-sectors/admin-sectors.component';
@@ -44,6 +45,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatCardModule} from '@angular/material/card';
 import { UpdateSectorComponent } from './update-sector/update-sector.component';
 import { UpdateStartupComponent } from './update-startup/update-startup.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatListModule} from '@angular/material/list';
 
 const routes: Route[] = [
   { path: '', redirectTo:'/landing-page', pathMatch: 'full' },
@@ -53,11 +56,9 @@ const routes: Route[] = [
     { path:'admin-startups', component: AdminStartupsComponent},
     { path:'admin-approve', component: AdminApproveComponent},
     { path:'about-us', component: AboutUsComponent},
-    { path:'admin-veiw', component: AdminVeiwComponent , canActivate:[AuthGuard] , children:[
+    { path:'admin-veiw', component: AdminVeiwComponent , canActivate:[AuthGuard] },
       { path: '', component: AdminVeiwComponent, pathMatch: 'full' },
-      { path:'admin-veiw/:id', component: DetailsComponent}
-
-    ]}, 
+      { path:'details', component: DetailsComponent},
     { path:'admin-login', component: AdminLoginComponent},
     { path:'list', component: ProfileListComponent},
     { path:'user-veiw', component: UesrVeiwComponent},
@@ -110,7 +111,10 @@ const routes: Route[] = [
     ShareButtonsModule,
     MatToolbarModule,
     MatTabsModule,
-    MatCardModule
+    MatCardModule,
+    CommonModule,
+    MatDialogModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

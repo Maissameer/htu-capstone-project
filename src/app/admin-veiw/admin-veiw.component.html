@@ -1,2 +1,27 @@
 
 <p *ngIf="authService.userState$ | async as user" >Welcome {{user.email}}</p>
+<div class="container">
+    <div class="header">
+      <img src="assets/NgPokedex.png" />
+    </div>
+    <div class="content">
+      <div class="list">
+        <div class="list-header">
+          <h3>List of Startups</h3>
+          <button mat-raised-button color="primary" (click)="addProfile()">
+            Add Startup
+          </button>
+        </div>
+        <app-list
+          [profile$]="allProfiles$"
+          (profileEmitter)="selectProfile($event)"
+        ></app-list>
+      </div>
+       <app-detail
+        [profile]="selectedProfile"
+        *ngIf="selectedProfile
+        (deleteProfile)="deleteProfile()"
+        (updateProfile)="updateProfile()"
+      ></app-detail>
+    </div>
+  </div>             

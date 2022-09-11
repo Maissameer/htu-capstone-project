@@ -5,40 +5,66 @@
   
     <h2>Plaese full the Required feilds to Submit the new StartUp
        </h2>
-  <form #form="ngForm" class="startup-form" [formGroup]="options"  
-  (ngSubmit)="done()">
-    <!-- startup name -->
-    <div>
-      <label >StartUp Name </label>
-      <br>
-      <mat-form-field  class="example-full-width" appearance="outline"
-    [hideRequiredMarker]="hideRequiredControl.value"
-    [floatLabel]="getFloatLabelValue()">
-  <input matInput placeholder="Enter the Name" type="text"
-  [formControl]="userName"
-  >
-  <mat-error *ngIf="userName?.errors?.['required']"
-            >Name is Required</mat-error
+       <form [formGroup]="form">
+        <!--user name-->
+        <mat-form-field>
+          <mat-label>User Name</mat-label>
+          <input required formControlName="userName" class="form-control" placeholder="Enter your Name here" type="text" matInput />
+        </mat-form-field>
+                <!--logo-->
+        <mat-form-field>
+          <mat-label>Image URL</mat-label>
+          <input matInput required formControlName="logo" class="form-control" placeholder="https://logo.png" type="text" />
+        </mat-form-field>
+                <!--category-->
+        <mat-form-field>
+          <mat-label>Sectore</mat-label>
+          <mat-select required formControlName="category" multiple="sectorsOptions"  class="form-control" placeholder="Select the parent category"
           >
-  </mat-form-field>
-    </div>
-    <!-- satrtup logo -->
-    <div>
-    <label>Logo </label>
-    <br>
-    <mat-form-field  class="example-full-width" appearance="outline"
-    [hideRequiredMarker]="hideRequiredControl.value"
-    [floatLabel]="getFloatLabelValue()">
-  <input type="url"
-  [formControl]="logo"
-   matInput placeholder="Enter the logo URL" >
-   <mat-error *ngIf="logo?.errors?.['required']"
-            >logo is Required</mat-error
+          <mat-option  *ngFor="let sector of sectorsOptions"> 
+            {{sector.name}}
+          </mat-option >
+          </mat-select>
+        </mat-form-field>
+        <!--city-->
+        <mat-form-field>
+          <mat-label>City</mat-label>
+          <mat-select required formControlName="city"  class="form-control" placeholder="Fire"
           >
-  </mat-form-field>
-  </div>
+          <mat-option  *ngFor="let thecity of cities"> 
+            {{thecity.city}}
+          </mat-option >
+          </mat-select>        
+        </mat-form-field>
+        <!--founder name-->
+        <mat-form-field>
+          <mat-label>Foundar Name</mat-label>
+          <input matInput required formControlName="founderName" class="form-control" placeholder="Enter the Founder Name" type="text" matInput/>
+        </mat-form-field>
+         <!--no. employee-->
+         <mat-form-field>
+          <mat-label>NO. Employee</mat-label>
+          <input matInput required placeholder="Enter the No." type="number"
+          formControlName="employee"
+          min="50"  class="form-control" />
+        </mat-form-field>
+         <!--website-->
+         <mat-form-field>
+          <mat-label>Website url</mat-label>
+          <input matInput required formControlName="url" class="form-control" placeholder="https://htu.com" type="url" />
+        </mat-form-field>
+        <!--email-->
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput required formControlName="emailFormControl" class="form-control" placeholder="Email" type="email" />
+        </mat-form-field>
+       
+
+
+  
  
-   <!--City -->
+ 
+   <!-- City
  <label>Select the City</label>
     <br>
   <mat-form-field class="example-full-width" appearance="outline">
@@ -50,9 +76,9 @@
     </mat-option >
     </mat-select>
   
-  </mat-form-field>
+  </mat-form-field> -->
 
-  <!-- parent Sector -->
+  <!-- parent Sector
   <label>Select the Sector</label>
     <br>
   <mat-form-field class="example-full-width" appearance="outline">
@@ -65,20 +91,9 @@
     </mat-select>
   
   </mat-form-field>
-   <!-- Founder name -->
-   <div>
-    <label >Founder Name </label>
-    <br>
-    <mat-form-field  class="example-full-width" appearance="outline"
-  [hideRequiredMarker]="hideRequiredControl.value"
-  [floatLabel]="getFloatLabelValue()">
-<input matInput placeholder="Enter the Name" type="text"
-[formControl]="founderName"
->
-</mat-form-field>
-  </div>
+   -->
 
-   <!-- No. Of Employees -->
+   <!-- No. Of Employees
    <div>
     <label >No. Of Employees </label>
     <br>
@@ -90,7 +105,7 @@
 min="50" 
 >
 </mat-form-field>
-  </div>
+  </div> -->
 
   <!--Year of estableshment-->
   <!-- <mat-form-field appearance="fill">
@@ -105,7 +120,7 @@ min="50"
     </mat-datepicker>
   </mat-form-field> -->
   <!--website URL-->
-  <div>
+  <!-- <div>
     <label>Website URL </label>
     <br>
     <mat-form-field  class="example-full-width" appearance="outline"
@@ -119,20 +134,10 @@ min="50"
           >
   </mat-form-field>
   </div>
-  <!--Email Address-->
-  <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Email</mat-label>
-    <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
-    <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-      Please enter a valid email address
-    </mat-error>
-    <mat-error *ngIf="emailFormControl.hasError('required')">
-      Email is <strong>required</strong>
-    </mat-error>
-  </mat-form-field>
+  -->
 
    <!-- button submit -->
-    <button type="submit" mat-raised-button color="primary" (click)="done()"  [disabled]="loginForm.invalid"> Add </button>
+    <button type="submit" mat-raised-button color="primary" (click)="done()"  [disabled]="form.invalid"> Add </button>
   </form>
   </div>
   </div>

@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, Validators} from '@angular/forms';
-import {FloatLabelType} from '@angular/material/form-field';
-import {MatSnackBar, MatSnackBarHorizontalPosition,
-  MatSnackBarVerticalPosition,} from '@angular/material/snack-bar';
-import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
-import {MatDatepicker} from '@angular/material/datepicker';
-  
+import { Profile } from '../startups-profile';
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import * as _moment from 'moment';
+import {default as _rollupMoment, Moment} from 'moment';
+import { MAT_DATE_FORMATS } from '@angular/material/core';
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
+import { MatDatepicker } from '@angular/material/datepicker';
+
 export interface sectorOption{
   name:string;
 }
@@ -13,8 +15,6 @@ export interface city{
   city:string;
 }
 
-import * as _moment from 'moment';
-import {default as _rollupMoment, Moment} from 'moment';
 
 const moment = _rollupMoment || _moment;
 
@@ -45,22 +45,18 @@ export const MY_FORMATS = {
 })
 export class AdminStartupsComponent implements OnInit {
 
+  form: FormGroup;
+
+  constructor(
+    private fb : FormBuilder,
+    private _snackBar: MatSnackBar, public readonly dialogRef: MatDialogRef<AdminStartupsComponent>,
+    @Inject(MAT_DIALOG_DATA) private profile: Profile
+  ) {}
+
   ngOnInit(): void {
+    this.setForm();
   }
   date = new FormControl(moment());
-
-  hideRequiredControl = new FormControl(false);
-  floatLabelControl = new FormControl('auto' as FloatLabelType);
-  options = this.fb.group({
-    hideRequired: this.hideRequiredControl,
-    floatLabel: this.floatLabelControl,
-  });
-
-  constructor(private fb : FormBuilder,private _snackBar: MatSnackBar) {}
-
-  getFloatLabelValue(): FloatLabelType {
-    return this.floatLabelControl.value || 'auto';
-  }
 
    sectorsOptions: sectorOption[] = [
     {name: 'Jordan Map'},
@@ -92,40 +88,48 @@ export class AdminStartupsComponent implements OnInit {
 
    ];
 
-  loginForm = this.fb.group({
-    employee : new FormControl('', [Validators.required]),
-    userName : new FormControl('', [Validators.required]),
-    founderName : new FormControl('', [Validators.required]),
-    logo : new FormControl('', [Validators.required]),
-    category : new FormControl('', [Validators.required]),
-    url : new FormControl('', [Validators.required]),
-    emailFormControl :new FormControl('', [Validators.required, Validators.email])
+   setForm() {
+    this.form = this.fb.group({
+      employee: [this.profile.employee, [Validators.required]],
+      userName: [this.profile.userName, [Validators.required]],
+      founderName: [this.profile.founderName, [Validators.required]],
+      logo: [this.profile.logo, [Validators.required]],
+      category: [this.profile.category, [Validators.required]],
+      city: [this.profile.city, [Validators.required]],
+      url: [this.profile.url, [Validators.required]],
+      emailFormControl: [this.profile.emailFormControl, [Validators.required,  Validators.email]],
+    
+    });
+  }
+
+  // loginForm = this.fb.group({
+  //   emailFormControl :new FormControl('', [Validators.required, Validators.email])
   
-  }) 
+  // }) 
   
-  get employee(){
-    return this.loginForm.controls.employee;
-   }
+  // get employee(){
+  //   return this.loginForm.controls.employee;
+  //  }
   
-   get userName(){
-    return this.loginForm.controls.userName;
-   }
+  //  get userName(){
+  //   return this.loginForm.controls.userName;
+  //  }
   
-   get logo(){
-    return this.loginForm.controls.logo;
-   }
-   get category(){
-    return this.loginForm.controls.category;
-   }
-   get url(){
-    return this.loginForm.controls.url;
-   }
-   get emailFormControl(){
-    return this.loginForm.controls.emailFormControl;
-   }
-   get founderName(){
-    return this.loginForm.controls.founderName;
-   }
+  //  get logo(){
+  //   return this.loginForm.controls.logo;
+  //  }
+  //  get category(){
+  //   return this.loginForm.controls.category;
+  //  }
+  //  get url(){
+  //   return this.loginForm.controls.url;
+  //  }
+  //  get emailFormControl(){
+  //   return this.loginForm.controls.emailFormControl;
+  //  }
+  //  get founderName(){
+  //   return this.loginForm.controls.founderName;
+  //  }
   
 
    
@@ -138,7 +142,10 @@ export class AdminStartupsComponent implements OnInit {
     this._snackBar.open('Your request has been sent', 'Done', {
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,
-    });  }
+
+    });
+    this.dialogRef.close({ ...this.profile, ...this.form.value });
+  }
 
     setMonthAndYear(normalizedMonthAndYear: Moment, datepicker: MatDatepicker<Moment>) {
       const ctrlValue = this.date.value!;
