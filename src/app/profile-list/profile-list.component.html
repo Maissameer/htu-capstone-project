@@ -3,7 +3,12 @@
   <button type="submit" mat-raised-button color="primary" (click)="createStartup()" > Add New Startup </button>
 
                 <!--the startup detalis-->
-
+                <div class="form-group">
+                  <label for="search-text">Search Text</label>
+                  <input type="email" class="form-control" id="search-text" aria-describedby="search-text" 
+                    [(ngModel)]="searchText" placeholder="Enter text to search" 
+                    autofocus>
+                </div>
                 <mat-card
                 *ngFor="let profile of profile$ | async"
                 (click)="selectProfile(profile)"

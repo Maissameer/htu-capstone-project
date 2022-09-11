@@ -2,19 +2,26 @@
 
   <!-- The categories -->
   <h1>Jordan Startup Map</h1>
-  <mat-chip-list
+  <mat-chip-list 
     class="example-chip chips-i-made">
-    <mat-chip
+    <mat-chip color="primary" selected
       class="example-box"
-      *ngFor="let sector of sectors">
+      *ngFor="let sector of sectors" ngclick="toggle($index)" >
       {{sector.name}}
     </mat-chip>
   </mat-chip-list>
-
   
+
+  <mat-grid-list >
+    <mat-grid-tile >
+    </mat-grid-tile>
+      
+  </mat-grid-list>
+
+
   <!-- the responsive grid -->
-  <div class="container">
-    <div class=" sub-container" >
+  <div class="container" #subContainer >
+    <div class=" sub-container"  >
       <div class="cat1">  <p>Jordan Map</p> </div>
   <a routerLink="/"><img src="../../assets/image/jordan-map.webp" alt="Jordan Startups Map"></a>
   </div>

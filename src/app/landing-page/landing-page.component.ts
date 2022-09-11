@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { __values } from 'tslib';
 
+
+//trying to do the filter:
+
+export interface colors{
+  colors: string;
+}
 export interface sectors {
   name: string;
 }
@@ -9,11 +16,15 @@ export interface sectors {
   styleUrls: ['./landing-page.component.css']
 })
 export class LandingPageComponent implements OnInit {
+//trying to do the filter:
+
+
+  //end of trying
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
+
   sectors: sectors[] = [
     {name: 'Jordan Map'},
     {name: '3D PRINTING'},
@@ -28,5 +39,12 @@ export class LandingPageComponent implements OnInit {
     {name: 'SPORTSTECH'},
     {name: 'OTHER'},
   ];
+
+  colors: colors[] =[
+
+
+  ]
+
+  
 
 }

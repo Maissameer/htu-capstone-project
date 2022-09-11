@@ -38,12 +38,12 @@ export class ProfileListComponent implements OnInit {
   }
 
   createStartup(){
-    this.router.navigate(['/admin-startups']);
+    this.router.navigate(['/landing-page/admin-startups']);
 
   }
 
   createSector(){
-    this.router.navigate(['/profile/admin-sectors']);
+    this.router.navigate(['/landing-page/admin-sectors']);
 
   }
 
@@ -55,4 +55,6 @@ export class ProfileListComponent implements OnInit {
     //   alert('data was deleted successfully');
     // });
   }
+  title = 'angular-text-search-highlight';
+  searchText = '';
 }

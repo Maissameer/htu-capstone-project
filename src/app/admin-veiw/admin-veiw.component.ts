@@ -56,8 +56,8 @@ selectProfile(profile: Profile) {
 }
 
 deleteProfile() {
-  this.profileService.delete(this.selectProfile!.id);
-  this.selectProfile = undefined;
+  // this.profileService.delete(this.selectProfile!.id);
+  // this.selectProfile = undefined;
 }
 
 

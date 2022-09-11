@@ -47,6 +47,8 @@ import { UpdateSectorComponent } from './update-sector/update-sector.component';
 import { UpdateStartupComponent } from './update-startup/update-startup.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatListModule} from '@angular/material/list';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { FilterPipe } from './filter.pipe';
 
 const routes: Route[] = [
   { path: '', redirectTo:'/landing-page', pathMatch: 'full' },
@@ -82,7 +84,8 @@ const routes: Route[] = [
     DetailsComponent,
     ProfileListComponent,
     UpdateSectorComponent,
-    UpdateStartupComponent
+    UpdateStartupComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -114,7 +117,8 @@ const routes: Route[] = [
     MatCardModule,
     CommonModule,
     MatDialogModule,
-    MatListModule
+    MatListModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
