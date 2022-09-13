@@ -1,7 +1,7 @@
 .mat-tab-group{
     text-align: center;
     justify-content: center;
-    margin: 50px ;
+    margin:0 50px ;
     font-size: 1rem;
     line-height: 1.4rem;
 }
@@ -30,6 +30,8 @@ p{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    background-color: rgb(255, 255, 255);
+
 }
 
 .example-full-width{
@@ -44,3 +46,8 @@ p{
 .qaf-txt{
     width: 25%;
 }
+
+.background{
+    background-color: rgb(243, 243, 243);
+}
+

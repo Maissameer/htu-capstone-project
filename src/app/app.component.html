@@ -1,3 +1,5 @@
+<div class="body">
+
 
 <mat-toolbar color="primary">
   <mat-toolbar-row>
@@ -30,11 +32,12 @@
     </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>
- 
+<!-- <div class="body">
+</div> -->
 
-      <router-outlet></router-outlet>
+      <router-outlet class="router"></router-outlet>
 
-      <mat-toolbar color="primary" class="mat-toolbar">
+      <mat-toolbar color="primary" class="footer-mat-toolbar">
           <!-- <div class="container-fluid py-3"> -->
             <share-buttons theme="circles-black"
               [include]="['copy', 'facebook', 'email', 'linkedin','telegram', 'twitter', 'whatsapp']"
@@ -47,4 +50,4 @@
             </share-buttons>
         <!-- </div>  -->
      </mat-toolbar>
-      
+    </div>

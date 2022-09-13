@@ -2,7 +2,7 @@
 <p *ngIf="authService.userState$ | async as user" >Welcome {{user.email}}</p>
 <div class="container">
     <div class="header">
-      <img src="assets/NgPokedex.png" />
+      <img src="../../assets/image/logo htu.png" />
     </div>
     <div class="content">
       <div class="list">
@@ -24,5 +24,11 @@
         (deleteProfile)="deleteProfile()"
         (updateProfile)="updateProfile()">
      </app-details> -->
+
+
+     <app-details [profile]="selectedProfile" (updateProfile)="updateprofile()" 
+    > 
+
+     </app-details>
     </div>
-  </div>             
+  </div>

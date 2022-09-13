@@ -73,7 +73,6 @@ const routes: Route[] = [
     { path:'admin-approve', component: AdminApproveComponent},
     { path:'about-us', component: AboutUsComponent},
     { path:'admin-veiw', component: AdminVeiwComponent , canActivate:[AuthGuard] },
-    { path: '', component: AdminVeiwComponent, pathMatch: 'full' },
     { path:'details', component: DetailsComponent},
     { path:'admin-login', component: AdminLoginComponent},
     { path:'list', component: ProfileListComponent},
