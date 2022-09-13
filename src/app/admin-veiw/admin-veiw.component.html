@@ -12,16 +12,17 @@
             Add Startup
           </button>
         </div>
-        <!-- <app-list
-          [profile$]="allProfiles$"
-          (profileEmitter)="selectProfile($event)"
-        ></app-list>
+        <app-profile-list
+          [profile$]="allProfile$"
+          (ProfileEmitter)="selectProfile($event)"
+        ></app-profile-list>
       </div>
-       <app-detail
-        [profile]="selectedProfile"
+        <!-- <app-details
+         
+               [profile]="selectedProfile"
         *ngIf="selectedProfile
         (deleteProfile)="deleteProfile()"
-        (updateProfile)="updateProfile()"
-      ></app-detail> -->
+        (updateProfile)="updateProfile()">
+     </app-details> -->
     </div>
   </div>             

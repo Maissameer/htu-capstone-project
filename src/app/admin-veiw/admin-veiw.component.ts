@@ -3,7 +3,7 @@ import { ProfileService } from './../profile.service';
 import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { filter, Observable, tap } from 'rxjs';
+import { filter,Subject, Observable, takeUntil, tap } from 'rxjs';
 import { Profile } from '../startups-profile';
 
 @Component({
@@ -13,12 +13,18 @@ import { Profile } from '../startups-profile';
 })
 
 export class AdminVeiwComponent implements OnInit {
-  profile$: Observable<Profile[]>;
-  selectedProfile: Profile;
+ allProfile$: Observable<Profile[]>;
+  selectedProfile?: Profile;
+  destroyed$ = new Subject<void>();
+
+  ngOnDestroy() {
+    this.destroyed$.next();
+  }
+
   constructor(public authService: AuthService, private profileService: ProfileService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
- this.profile$ = this.profileService.getAll();
+ this.allProfile$ = this.profileService.getAll();
   }
 
   addProfile() {
@@ -31,7 +37,8 @@ export class AdminVeiwComponent implements OnInit {
       .afterClosed()
       .pipe(
         filter(Boolean),
-        tap((profile) => this.profileService.create(profile))
+        tap((profile) => this.profileService.create(profile)),
+        takeUntil(this.destroyed$)// Will force the Observable to complete when destroyed$ emits a value
       )
       .subscribe();
   }
@@ -56,8 +63,8 @@ selectProfile(profile: Profile) {
 }
 
 deleteProfile() {
-  // this.profileService.delete(this.selectProfile!.id);
-  // this.selectProfile = undefined;
+  //  this.profileService.delete(this.selectedProfile!.id);
+  //  this.selectedProfile = undefined;
 }
 
 

@@ -51,23 +51,35 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { FilterPipe } from './filter.pipe';
 
 const routes: Route[] = [
+  // { path: '', redirectTo:'/landing-page', pathMatch: 'full' },
+  // { path: 'landing-page', children:[
+  //   { path: '', component: LandingPageComponent, pathMatch: 'full' },
+  //   { path: 'admin-sectors', component: AdminSectorsComponent },
+  //   { path:'admin-startups', component: AdminStartupsComponent},
+  //   { path:'admin-approve', component: AdminApproveComponent},
+  //   { path:'about-us', component: AboutUsComponent},
+  //   { path:'admin-veiw', component: AdminVeiwComponent , canActivate:[AuthGuard] },
+  //     { path: '', component: AdminVeiwComponent, pathMatch: 'full' },
+  //     { path:'details', component: DetailsComponent},
+  //   { path:'admin-login', component: AdminLoginComponent},
+  //   { path:'list', component: ProfileListComponent},
+  //   { path:'user-veiw', component: UesrVeiwComponent},
+  // ] },
+  // // { path:'landing-page', component: LandingPageComponent},
+  // { path: '**' , component: PagenotfoundComponent}
   { path: '', redirectTo:'/landing-page', pathMatch: 'full' },
-  { path: 'landing-page', children:[
-    { path: '', component: LandingPageComponent, pathMatch: 'full' },
     { path: 'admin-sectors', component: AdminSectorsComponent },
     { path:'admin-startups', component: AdminStartupsComponent},
     { path:'admin-approve', component: AdminApproveComponent},
     { path:'about-us', component: AboutUsComponent},
     { path:'admin-veiw', component: AdminVeiwComponent , canActivate:[AuthGuard] },
-      { path: '', component: AdminVeiwComponent, pathMatch: 'full' },
-      { path:'details', component: DetailsComponent},
+    { path: '', component: AdminVeiwComponent, pathMatch: 'full' },
+    { path:'details', component: DetailsComponent},
     { path:'admin-login', component: AdminLoginComponent},
     { path:'list', component: ProfileListComponent},
     { path:'user-veiw', component: UesrVeiwComponent},
-  ] },
-  // { path:'landing-page', component: LandingPageComponent},
+    // { path:'landing-page', component: LandingPageComponent},
   { path: '**' , component: PagenotfoundComponent}
-  
 ];
 @NgModule({
   declarations: [
