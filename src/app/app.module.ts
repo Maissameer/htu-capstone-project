@@ -78,8 +78,8 @@ const routes: Route[] = [
     { path:'admin-login', component: AdminLoginComponent},
     { path:'list', component: ProfileListComponent},
     { path:'user-veiw', component: UesrVeiwComponent},
-    // { path:'landing-page', component: LandingPageComponent},
-  { path: '**' , component: PagenotfoundComponent}
+    { path:'landing-page', component: LandingPageComponent},
+    { path: '**' , component: PagenotfoundComponent}
 ];
 @NgModule({
   declarations: [

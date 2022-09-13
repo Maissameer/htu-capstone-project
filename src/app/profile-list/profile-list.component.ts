@@ -38,12 +38,12 @@ export class ProfileListComponent implements OnInit {
   }
 
   createStartup(){
-    this.router.navigate(['/landing-page/admin-startups']);
+    this.router.navigate(['admin-startups']);
 
   }
 
   createSector(){
-    this.router.navigate(['/landing-page/admin-sectors']);
+    this.router.navigate(['admin-sectors']);
 
   }
 
