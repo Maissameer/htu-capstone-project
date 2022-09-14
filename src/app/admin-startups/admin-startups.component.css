@@ -40,3 +40,8 @@ background-color: white;
  .startup-form > label{
   font-size: medium;
  }
+
+ .total-body{
+  overflow: scroll;
+  background-color: aqua;
+ }

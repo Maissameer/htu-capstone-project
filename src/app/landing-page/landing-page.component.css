@@ -8,6 +8,12 @@ h1{
 
 .mat-chip{
 text-align: center;
+justify-content: center !important;
+
+}
+.mat-chip-list-wrapper {
+  justify-content: center !important;
+
 }
 a{
   text-decoration: none;

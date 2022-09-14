@@ -84,7 +84,7 @@ export class AdminStartupsComponent implements OnInit {
     {city:'Mafraq'},
     {city:'Aqaba'},
     {city:'Tafila'},
-    {city:'Al-Karak'}
+    {city:'Al-Karak'},
 
    ];
 
@@ -95,7 +95,7 @@ export class AdminStartupsComponent implements OnInit {
       founderName: [this.profile.founderName, [Validators.required]],
       logo: [this.profile.logo, [Validators.required]],
       category: [this.profile.category, [Validators.required]],
-      city: [this.profile.city, [Validators.required]],
+      // city: [this.profile.city, [Validators.required]],
       url: [this.profile.url, [Validators.required]],
       emailFormControl: [this.profile.emailFormControl, [Validators.required,  Validators.email]],
     

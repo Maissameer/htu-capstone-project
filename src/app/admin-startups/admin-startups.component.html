@@ -6,6 +6,8 @@
     <h2>Plaese full the Required feilds to Submit the new StartUp
        </h2>
        <form [formGroup]="form">
+        <button type="submit" mat-raised-button color="primary" (click)="done()"  [disabled]="form.invalid"> Add </button>
+
         <!--user name-->
         <mat-form-field>
           <mat-label>User Name</mat-label>
@@ -29,7 +31,7 @@
         <!--city-->
         <mat-form-field>
           <mat-label>City</mat-label>
-          <mat-select required formControlName="city"  class="form-control" placeholder="Fire"
+          <mat-select formControlName="city"  multiple="city"  class="form-control" placeholder="Fire"
           >
           <mat-option  *ngFor="let thecity of cities"> 
             {{thecity.city}}

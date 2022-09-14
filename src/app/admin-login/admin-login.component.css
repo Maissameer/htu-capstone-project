@@ -13,6 +13,7 @@ flex-direction: column;
 } 
 .body{
     background-color: rgb(243, 243, 243);
+    height: -webkit-fill-available;
 
 }
 .login-form{
@@ -32,7 +33,7 @@ align-items: center; */
 }
 .login-pass{
        margin-bottom: 10px;
-       
+
         /* display: flex;
     flex-direction: column;
     justify-content: center;

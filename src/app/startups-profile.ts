@@ -1,5 +1,5 @@
 export interface Profile {
-    emailFormControl: any;
+    emailFormControl: any,
     id ?: string,
     userName: string,
     logo: string,

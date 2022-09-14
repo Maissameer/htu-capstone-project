@@ -1,3 +1,5 @@
+import { SectorService } from './../sector.service';
+import { Sector } from './../sector';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProfileService } from './../profile.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
@@ -13,13 +15,14 @@ export class ProfileListComponent implements OnInit {
   @Input() profile$: Observable<Profile[]>;
   @Output() ProfileEmitter = new EventEmitter<Profile>();
 
- 
+  @Input() sector$: Observable<Sector[]>;
+  @Output() SectoreEmitter = new EventEmitter<Sector>();
  
   //  profiles:  MatTableDataSource<Profile> = new  MatTableDataSource<Profile>([]);
  
  
   constructor(private profileService: ProfileService,private router: Router,
-    private route: ActivatedRoute) {
+    private route: ActivatedRoute , private sectorService: SectorService) {
   //  this.profileService.getAll().subscribe((data)=> {
   //   this.profiles.data = data;
   //  })
@@ -57,4 +60,21 @@ export class ProfileListComponent implements OnInit {
   }
   title = 'angular-text-search-highlight';
   searchText = '';
+
+
+  selectSector(sector: Sector) {
+    this.SectoreEmitter.emit(sector);
+  }
+  //  const idFromRoute = this.route.snapshot.paramMap.get('id');   
+  
+  
+    deleteSector(id: string){
+     this.sectorService.delete(id).then(()=> {
+      alert('data was deleted successfully');
+     })
+      // this.profileService.delete(id).then(()=> {
+      //   alert('data was deleted successfully');
+      // });
+    }
 }
+
