@@ -56,6 +56,10 @@ p{
         align-items: center;
         row-gap: 55px;
     } 
+     .qaf-form{
+        flex-direction: row;
+
+    }
     
 }
 
