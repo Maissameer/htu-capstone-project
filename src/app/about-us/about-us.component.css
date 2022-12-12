@@ -50,4 +50,12 @@ p{
 .background{
     background-color: rgb(243, 243, 243);
 }
+@media screen and (max-width: 720px) {
+    .about-us {
+       flex-direction: row;
+        align-items: center;
+        row-gap: 55px;
+    } 
+    
+}
 
